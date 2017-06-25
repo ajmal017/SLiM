@@ -1,0 +1,140 @@
+symbol	sector	fullEmployeeNumber	currentPrice
+AMBR	Technology	677	7.66
+AMCN	Services	415	2.49
+AMSWA	Technology	386	10.16
+ARIS	Technology	405	5.05
+ASYS	Technology	470	5.59
+ATEN	Technology	837	9.18
+ATTU	Technology	235	7.64
+AVID	Technology	1522	4.7
+AWRE	Technology	68	4.65
+AXTI	Technology	994	5.65
+BBOX	Technology	3476	8.65
+BCOV	Technology	490	9.05
+BOSC	Technology	77	2.12
+BV	Technology	777	4.25
+CAFN	Technology	63	4.31
+CCUR	Technology	251	4.9
+CDI	Services	700	8
+CLNT	Industrial Goods	151	2.75
+COOL	Technology	4	8.52
+CPAH		71	2.3347
+CRDS	Technology	5	2.74
+CSLT	Technology	381	3.2
+CSPI	Technology	185	10.5
+CTG	Technology	3400	6.02
+CVV	Industrial Goods	177	9.97
+DGLY	Technology	154	4.15
+DLHC	Services	1400	5.32
+DTRM		140	3.61
+DWCH	Technology	146	8.3
+EDGW	Technology	465	7.63
+EIGI	Technology	4005	7.9
+ELON	Technology	81	6.2
+EMAN	Technology	93	2.25
+EMKR	Technology	589	8.6
+ENOC	Services	1077	5.35
+ERII	Industrial Goods	120	7.595
+EVOL	Technology	242	4.65
+EXAR	Technology	269	10.43
+EXTR	Technology	1378	6.44
+FIT	Technology	1753	5.4
+FPAY	Financial	90	4.7
+FUEL	Services	851	4.75
+GEC		7	3.25
+GFN	Services	763	5.15
+GIG	Technology	132	3.07
+GIGM	Technology	209	3.05
+GLA	Financial	600	4.03
+GLUU	Technology	754	2.13
+GSIT	Technology	142	8.58
+GUID	Technology	350	5.84
+HDP	Technology	1080	9.31
+HIMX	Technology	2100	9.28
+HIVE	Technology	620	4.25
+HLIT	Technology	1376	5.9
+IDN	Technology	22	2.32
+IEC	Technology	634	3.7
+IIJI	Technology	3108	9.14
+IMMR	Technology	132	8.33
+INAP	Technology	530	3.8
+INOD	Technology	4750	2.1
+INPX		125	2.89
+INS	Industrial Goods	286	4.69
+INTX	Services	448	3.87
+IPDN	Technology	182	9.33
+ISSC	Industrial Goods	91	3.05
+JIVE	Technology	595	4.35
+JMU		285	2.77
+JOB	Services	147	4.989
+KEYW	Technology	1058	9.74
+KONE	Technology	49	3.32
+KTCC	Technology	4947	7.2
+KVHI	Technology	635	8.1
+KZ	Technology	837	7.41
+LEDS	Technology	225	3.02
+LFGR		265	7.95
+LINK		111	9.02
+LPSN	Technology	985	6.75
+LPTH	Industrial Goods	181	2.32
+LSCC	Technology	986	7.04
+LTRX	Technology	114	2.95
+MAMS	Technology	230	6.33
+MATR	Technology	265	3.5
+MIND	Technology	210	4.36
+MITK	Technology	104	6.5
+MITL	Technology	3300	6.89
+MIXT	Technology	1089	6.61
+MJCO	Technology	2134	5
+MNDO	Technology	262	2.45
+MNTX	Industrial Goods	709	7.01
+MOBL	Technology	854	4.4
+MODN	Technology	814	10.15
+MOSY	Technology	104	2.35
+MRVC	Technology	235	10.4
+MX	Technology	2864	9.05
+NNDM		69	6.72
+NPTN	Technology	2401	9.26
+NQ	Technology	1019	3.71
+NTWK	Technology	1630	5.15
+OCLR	Technology	1689	10.11
+OIIM	Technology	363	2.38
+PCTI	Technology	503	5.54
+PFIN	Industrial Goods	164	7.95
+PLAB	Technology	1530	10.85
+PXLW	Technology	166	4.59
+QBAK	Technology	22	6.15
+QRHC		112	2.15
+QUMU	Technology	150	2.77
+RCMT	Services	2370	4.81
+RENN	Technology	1078	7.75
+RESN	Technology	32	4.74
+RNWK	Technology	534	4.54
+RST	Technology	717	9.68
+RSYS	Technology	790	3.87
+RUBI	Technology	572	5.58
+RWC	Technology	107	5.1
+SEAC	Technology	660	2.3
+SGMA	Technology	2790	4.85
+SGOC	Consumer Goods	16	2.8
+SIGM	Technology	717	5.95
+SLP	Technology	60	10.95
+SOFO	Technology	205	4.81
+SONS	Technology	1152	6.55
+SPCB	Technology	138	2.89
+SPRT	Technology	1525	2.15
+SSNI	Technology	702	10.56
+TACT	Technology	120	8.15
+TCCO	Technology	26	2.4
+TRT	Technology	629	4.1301
+TSRI	Technology	320	5.25
+TZOO	Technology	444	9.55
+VIAV	Technology	3000	10.72
+VISI	Services	2300	7.35
+VUZI	Consumer Goods	52	6.15
+WSCI	Industrial Goods	91	3.3
+XPLR	Technology	114	2.03
+YUME	Services	505	3.9
+ZDGE		61	3.11
+ZIXI	Technology	201	4.63
+ZNGA	Technology	1681	2.8

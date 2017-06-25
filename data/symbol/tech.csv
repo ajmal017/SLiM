@@ -1,0 +1,618 @@
+Symbol,Sector,Industry
+VNET,Technology,"Computer Software: Programming, Data Processing"
+TWOU,Technology,Computer Software: Prepackaged Software
+DDD,Technology,Computer Software: Prepackaged Software
+JOBS,Technology,Diversified Commercial Services
+WUBA,Technology,"Computer Software: Programming, Data Processing"
+ATEN,Technology,Computer Communications Equipment
+AAN,Technology,Diversified Commercial Services
+ACIA,Technology,Semiconductors
+ACIW,Technology,Computer Software: Prepackaged Software
+ATVI,Technology,Computer Software: Prepackaged Software
+ACTA,Technology,EDP Services
+ATU,Technology,Industrial Machinery/Components
+ACXM,Technology,EDP Services
+IOTS,Technology,Semiconductors
+ADBE,Technology,Computer Software: Prepackaged Software
+AMD,Technology,Semiconductors
+ASX,Technology,Semiconductors
+AER,Technology,Diversified Commercial Services
+ACY,Technology,Diversified Commercial Services
+HIVE,Technology,EDP Services
+AGYS,Technology,EDP Services
+AL,Technology,Diversified Commercial Services
+AYR,Technology,Diversified Commercial Services
+AIRG,Technology,Radio And Television Broadcasting And Communications Equipment
+AMCN,Technology,Advertising
+ALRM,Technology,Computer Software: Prepackaged Software
+ALLT,Technology,Computer Communications Equipment
+MDRX,Technology,EDP Services
+AOSL,Technology,Semiconductors
+GOOG,Technology,"Computer Software: Programming, Data Processing"
+GOOGL,Technology,"Computer Software: Programming, Data Processing"
+AYA,Technology,"Computer Software: Programming, Data Processing"
+AMBA,Technology,Semiconductors
+AMBR,Technology,Computer Software: Prepackaged Software
+DOX,Technology,EDP Services
+AMSWA,Technology,Computer Software: Prepackaged Software
+AMKR,Technology,Semiconductors
+AMN,Technology,Professional Services
+ASYS,Technology,Industrial Machinery/Components
+ADI,Technology,Semiconductors
+ANSS,Technology,Computer Software: Prepackaged Software
+APPF,Technology,Computer Software: Prepackaged Software
+AAPL,Technology,Computer Manufacturing
+AMAT,Technology,Semiconductors
+AAOI,Technology,Semiconductors
+APTI,Technology,Computer Software: Prepackaged Software
+ARIS,Technology,"Computer Software: Programming, Data Processing"
+ANET,Technology,Computer Communications Equipment
+ARRS,Technology,Radio And Television Broadcasting And Communications Equipment
+ASML,Technology,Industrial Machinery/Components
+AZPN,Technology,EDP Services
+ALOT,Technology,Computer peripheral equipment
+ASUR,Technology,EDP Services
+TEAM,Technology,Computer Software: Prepackaged Software
+ATOM,Technology,Semiconductors
+ATTU,Technology,Computer Software: Prepackaged Software
+AUO,Technology,Semiconductors
+ABTL,Technology,"Computer Software: Programming, Data Processing"
+ADSK,Technology,Computer Software: Prepackaged Software
+ATHM,Technology,EDP Services
+ADP,Technology,EDP Services
+AVNW,Technology,Radio And Television Broadcasting And Communications Equipment
+AVID,Technology,Computer Software: Prepackaged Software
+AWRE,Technology,Computer Software: Prepackaged Software
+ACLS,Technology,Industrial Machinery/Components
+AXTI,Technology,Semiconductors
+BOSC,Technology,Computer Communications Equipment
+BIDU,Technology,"Computer Software: Programming, Data Processing"
+RATE,Technology,EDP Services
+CUDA,Technology,Computer peripheral equipment
+BBSI,Technology,Professional Services
+BV,Technology,Computer Software: Prepackaged Software
+BHE,Technology,Electrical Products
+BNFT,Technology,Computer Software: Prepackaged Software
+BGSF,Technology,Professional Services
+BITA,Technology,EDP Services
+BBOX,Technology,Computer Communications Equipment
+BKFS,Technology,Computer Software: Prepackaged Software
+BLKB,Technology,Computer Software: Prepackaged Software
+BDR,Technology,Radio And Television Broadcasting And Communications Equipment
+BCOR,Technology,EDP Services
+EPAY,Technology,Computer Software: Prepackaged Software
+BOX,Technology,Computer Software: Prepackaged Software
+BLIN,Technology,Computer Software: Prepackaged Software
+BCOV,Technology,EDP Services
+AVGO,Technology,Semiconductors
+BSFT,Technology,Computer Software: Prepackaged Software
+BVSN,Technology,Computer Software: Prepackaged Software
+BRCD,Technology,Computer Communications Equipment
+BRKS,Technology,Industrial Machinery/Components
+CA,Technology,Computer Software: Prepackaged Software
+CCMP,Technology,Semiconductors
+CAFN,Technology,Telecommunications Equipment
+CACI,Technology,EDP Services
+CDNS,Technology,Computer Software: Prepackaged Software
+CAI,Technology,Diversified Commercial Services
+CAMP,Technology,Radio And Television Broadcasting And Communications Equipment
+CALD,Technology,EDP Services
+CSIQ,Technology,Semiconductors
+CARB,Technology,EDP Services
+CSLT,Technology,EDP Services
+CAVM,Technology,Semiconductors
+CDI,Technology,Professional Services
+CLS,Technology,Electrical Products
+CRNT,Technology,Radio And Television Broadcasting And Communications Equipment
+CERN,Technology,EDP Services
+CEVA,Technology,Semiconductors
+CYOU,Technology,Computer Software: Prepackaged Software
+ECOM,Technology,Computer Software: Prepackaged Software
+CHKP,Technology,Computer Software: Prepackaged Software
+CMCM,Technology,Computer Software: Prepackaged Software
+CVR,Technology,Industrial Machinery/Components
+STV,Technology,Computer Software: Prepackaged Software
+CNIT,Technology,Computer Software: Prepackaged Software
+CCIH,Technology,EDP Services
+CNET,Technology,"Computer Software: Programming, Data Processing"
+IMOS,Technology,Semiconductors
+CBR,Technology,EDP Services
+CRUS,Technology,Semiconductors
+CSCO,Technology,Computer Communications Equipment
+CTXS,Technology,Computer Software: Prepackaged Software
+CLNT,Technology,Industrial Machinery/Components
+CTSH,Technology,EDP Services
+CHUBA,Technology,Computer Software: Prepackaged Software
+CHUBK,Technology,Computer Software: Prepackaged Software
+COMM,Technology,Radio And Television Broadcasting And Communications Equipment
+CVLT,Technology,Computer Software: Prepackaged Software
+CPSI,Technology,EDP Services
+CSC,Technology,EDP Services
+CTG,Technology,EDP Services
+CMTL,Technology,Radio And Television Broadcasting And Communications Equipment
+CCUR,Technology,Computer Manufacturing
+CNXR,Technology,Computer Software: Prepackaged Software
+CVG,Technology,EDP Services
+COYN,Technology,Computer Communications Equipment
+COYNW,Technology,Computer Communications Equipment
+CLGX,Technology,EDP Services
+CSOD,Technology,Computer Software: Prepackaged Software
+CPAH,Technology,Computer Software: Prepackaged Software
+COUP,Technology,Computer Software: Prepackaged Software
+COVS,Technology,EDP Services
+CRAY,Technology,Computer Manufacturing
+CREE,Technology,Semiconductors
+CRTO,Technology,Advertising
+CCRN,Technology,Professional Services
+CRDS,Technology,Computer peripheral equipment
+CSGS,Technology,EDP Services
+CSPI,Technology,EDP Services
+CSRA,Technology,EDP Services
+CTS,Technology,Electrical Products
+CW,Technology,Industrial Machinery/Components
+CVV,Technology,Industrial Machinery/Components
+CYBR,Technology,Computer Software: Prepackaged Software
+CY,Technology,Semiconductors
+CYRN,Technology,Computer Software: Prepackaged Software
+DQ,Technology,Semiconductors
+DRAM,Technology,Electronic Components
+DWCH,Technology,Computer Software: Prepackaged Software
+DVMT,Technology,Computer Manufacturing
+DTRM,Technology,Computer Software: Prepackaged Software
+DGII,Technology,Computer Communications Equipment
+DMRC,Technology,EDP Services
+DGLY,Technology,Radio And Television Broadcasting And Communications Equipment
+DIOD,Technology,Semiconductors
+DLHC,Technology,Professional Services
+DOV,Technology,Industrial Machinery/Components
+DSPG,Technology,Semiconductors
+DST,Technology,EDP Services
+ETN,Technology,Industrial Machinery/Components
+EBIX,Technology,EDP Services
+ELON,Technology,Computer Communications Equipment
+SATS,Technology,Radio And Television Broadcasting And Communications Equipment
+EDGW,Technology,"Computer Software: Programming, Data Processing"
+EGAN,Technology,Computer Software: Prepackaged Software
+EA,Technology,Computer Software: Prepackaged Software
+EFII,Technology,Computer Communications Equipment
+ELLI,Technology,Computer Software: Prepackaged Software
+ELTK,Technology,Electrical Products
+EMAN,Technology,Semiconductors
+EMKR,Technology,Semiconductors
+EIGI,Technology,Computer Software: Prepackaged Software
+WATT,Technology,Radio And Television Broadcasting And Communications Equipment
+ERII,Technology,Industrial Machinery/Components
+ENOC,Technology,"Computer Software: Programming, Data Processing"
+ENPH,Technology,Semiconductors
+EPAM,Technology,EDP Services
+PLUS,Technology,Retail: Computer Software & Peripheral Equipment
+ERIC,Technology,Radio And Television Broadcasting And Communications Equipment
+MRAM,Technology,Semiconductors
+EVTC,Technology,EDP Services
+EVOL,Technology,EDP Services
+EXA,Technology,Computer Software: Prepackaged Software
+EXAR,Technology,Semiconductors
+EXTN,Technology,Diversified Commercial Services
+EXTR,Technology,Computer Communications Equipment
+FFIV,Technology,Computer Communications Equipment
+FB,Technology,"Computer Software: Programming, Data Processing"
+FDS,Technology,"Computer Software: Programming, Data Processing"
+FALC,Technology,Computer Software: Prepackaged Software
+SFUN,Technology,EDP Services
+FNSR,Technology,Semiconductors
+FEYE,Technology,Computer peripheral equipment
+FSLR,Technology,Semiconductors
+FISV,Technology,EDP Services
+FIT,Technology,Computer Manufacturing
+FIVN,Technology,EDP Services
+FLEX,Technology,Electrical Products
+FPAY,Technology,Diversified Commercial Services
+FORM,Technology,Semiconductors
+FORTY,Technology,EDP Services
+FTNT,Technology,Computer peripheral equipment
+FNCX,Technology,"Computer Software: Programming, Data Processing"
+FSNN,Technology,Computer Software: Prepackaged Software
+GDS,Technology,"Computer Software: Programming, Data Processing"
+JOB,Technology,Diversified Commercial Services
+GFN,Technology,Diversified Commercial Services
+GFNCP,Technology,Diversified Commercial Services
+GFNSL,Technology,Diversified Commercial Services
+GIGM,Technology,"Computer Software: Programming, Data Processing"
+GIMO,Technology,EDP Services
+GIG,Technology,Semiconductors
+GILT,Technology,Radio And Television Broadcasting And Communications Equipment
+GLA,Technology,Electronic Components
+GSB,Technology,Computer Software: Prepackaged Software
+GLOB,Technology,EDP Services
+GLUU,Technology,EDP Services
+GDDY,Technology,EDP Services
+GHM,Technology,Industrial Machinery/Components
+GEC,Technology,Computer Software: Prepackaged Software
+GSUM,Technology,Computer Software: Prepackaged Software
+GRPN,Technology,Advertising
+GVP,Technology,Computer Software: Prepackaged Software
+GSIT,Technology,Semiconductors
+GUID,Technology,Computer Software: Prepackaged Software
+GWRE,Technology,Computer Software: Prepackaged Software
+HQCL,Technology,Semiconductors
+HLIT,Technology,Radio And Television Broadcasting And Communications Equipment
+HHS,Technology,Advertising
+HSTM,Technology,"Computer Software: Programming, Data Processing"
+HSII,Technology,Diversified Commercial Services
+HPE,Technology,Computer Manufacturing
+HIMX,Technology,Semiconductors
+HDP,Technology,Computer Software: Prepackaged Software
+HPQ,Technology,Computer Manufacturing
+HUBS,Technology,Computer Software: Prepackaged Software
+HSON,Technology,Professional Services
+ICHR,Technology,Semiconductors
+INVE,Technology,Computer peripheral equipment
+IEC,Technology,Electrical Products
+INFO,Technology,"Computer Software: Programming, Data Processing"
+ITW,Technology,Industrial Machinery/Components
+IMMR,Technology,Computer peripheral equipment
+IMPV,Technology,Computer Software: Prepackaged Software
+INFY,Technology,EDP Services
+INOD,Technology,EDP Services
+ISSC,Technology,EDP Services
+INOV,Technology,EDP Services
+IPHI,Technology,Semiconductors
+INPX,Technology,EDP Services
+NSP,Technology,Professional Services
+INSE,Technology,Computer Software: Prepackaged Software
+INSEW,Technology,Computer Software: Prepackaged Software
+INST,Technology,Computer Software: Prepackaged Software
+IDTI,Technology,Semiconductors
+INTC,Technology,Semiconductors
+IDN,Technology,Computer Software: Prepackaged Software
+INS,Technology,Computer Software: Prepackaged Software
+LINK,Technology,Computer peripheral equipment
+IMI,Technology,Semiconductors
+INAP,Technology,"Computer Software: Programming, Data Processing"
+IBM,Technology,Computer Manufacturing
+IIJI,Technology,"Computer Software: Programming, Data Processing"
+IPG,Technology,Advertising
+INTX,Technology,EDP Services
+INXN,Technology,"Computer Software: Programming, Data Processing"
+IVAC,Technology,Industrial Machinery/Components
+INTU,Technology,Computer Software: Prepackaged Software
+INVN,Technology,Semiconductors
+IPAS,Technology,EDP Services
+IPGP,Technology,Semiconductors
+IXYS,Technology,Semiconductors
+JCOM,Technology,Telecommunications Equipment
+JASO,Technology,Semiconductors
+JBL,Technology,Electrical Products
+JKHY,Technology,EDP Services
+JKS,Technology,Semiconductors
+JIVE,Technology,EDP Services
+JMU,Technology,EDP Services
+JBT,Technology,Industrial Machinery/Components
+JNPR,Technology,Computer Communications Equipment
+KAI,Technology,Industrial Machinery/Components
+KELYA,Technology,Professional Services
+KELYB,Technology,Professional Services
+KTEC,Technology,Industrial Machinery/Components
+KTCC,Technology,Computer peripheral equipment
+KFRC,Technology,Professional Services
+KE,Technology,Electrical Products
+KONE,Technology,EDP Services
+KZ,Technology,Telecommunications Equipment
+KOPN,Technology,Semiconductors
+KFY,Technology,Diversified Commercial Services
+KLIC,Technology,Semiconductors
+KVHI,Technology,Radio And Television Broadcasting And Communications Equipment
+KYO,Technology,Semiconductors
+LLL,Technology,Radio And Television Broadcasting And Communications Equipment
+LRCX,Technology,Industrial Machinery/Components
+LTRX,Technology,Computer Communications Equipment
+LSCC,Technology,Semiconductors
+LFGR,Technology,EDP Services
+LDOS,Technology,EDP Services
+LTRPA,Technology,EDP Services
+LTRPB,Technology,EDP Services
+LPTH,Technology,Semiconductors
+LECO,Technology,Industrial Machinery/Components
+LN,Technology,"Computer Software: Programming, Data Processing"
+LIQT,Technology,Industrial Machinery/Components
+LIVE,Technology,EDP Services
+LPSN,Technology,Computer Software: Prepackaged Software
+LOGI,Technology,Computer peripheral equipment
+LORL,Technology,Radio And Television Broadcasting And Communications Equipment
+LXFT,Technology,EDP Services
+MTSI,Technology,Semiconductors
+MGIC,Technology,Computer Software: Prepackaged Software
+MX,Technology,Semiconductors
+MNGA,Technology,Industrial Machinery/Components
+MJCO,Technology,Computer Software: Prepackaged Software
+MAMS,Technology,Computer Software: Prepackaged Software
+MANH,Technology,Computer Software: Prepackaged Software
+MNTX,Technology,Industrial Machinery/Components
+MAN,Technology,Professional Services
+MRIN,Technology,EDP Services
+MRVL,Technology,Semiconductors
+MTCH,Technology,"Computer Software: Programming, Data Processing"
+MTLS,Technology,Computer Software: Prepackaged Software
+MATR,Technology,EDP Services
+MXIM,Technology,Semiconductors
+MXL,Technology,Semiconductors
+MGRC,Technology,Diversified Commercial Services
+MDCA,Technology,Advertising
+MTBC,Technology,Computer Software: Prepackaged Software
+MTBCP,Technology,Computer Software: Prepackaged Software
+MDSO,Technology,Computer Software: Prepackaged Software
+MLNX,Technology,Semiconductors
+MENT,Technology,EDP Services
+MCHP,Technology,Semiconductors
+MU,Technology,Semiconductors
+MSCC,Technology,Semiconductors
+MSFT,Technology,Computer Software: Prepackaged Software
+MSTR,Technology,Computer Software: Prepackaged Software
+MCRN,Technology,Industrial Machinery/Components
+MIME,Technology,Computer Software: Prepackaged Software
+MNDO,Technology,EDP Services
+MB,Technology,EDP Services
+MIND,Technology,Diversified Commercial Services
+MINDP,Technology,Diversified Commercial Services
+MITK,Technology,Computer peripheral equipment
+MITL,Technology,Radio And Television Broadcasting And Communications Equipment
+MIXT,Technology,Computer Software: Prepackaged Software
+MOBL,Technology,Computer Software: Prepackaged Software
+MBLY,Technology,Computer Software: Prepackaged Software
+MODN,Technology,"Computer Software: Programming, Data Processing"
+MDSY,Technology,EDP Services
+MOMO,Technology,Computer Software: Prepackaged Software
+MPWR,Technology,Semiconductors
+TYPE,Technology,EDP Services
+MSDI,Technology,Electronic Components
+MSDIW,Technology,Electronic Components
+MOSY,Technology,Semiconductors
+MSI,Technology,Radio And Television Broadcasting And Communications Equipment
+MOXC,Technology,"Computer Software: Programming, Data Processing"
+MRVC,Technology,Semiconductors
+MYSZ,Technology,Computer Software: Prepackaged Software
+NNDM,Technology,Electrical Products
+NH,Technology,EDP Services
+NATI,Technology,Computer Software: Prepackaged Software
+NCIT,Technology,EDP Services
+NEFF,Technology,Diversified Commercial Services
+NPTN,Technology,Semiconductors
+NETE,Technology,EDP Services
+NTAP,Technology,Electronic Components
+NLST,Technology,Semiconductors
+NTCT,Technology,EDP Services
+NTWK,Technology,Computer Software: Prepackaged Software
+NTIP,Technology,Computer Software: Prepackaged Software
+NEWR,Technology,Computer Software: Prepackaged Software
+NICE,Technology,Computer Manufacturing
+NMBL,Technology,Electronic Components
+NOK,Technology,Radio And Television Broadcasting And Communications Equipment
+NQ,Technology,Computer Software: Prepackaged Software
+DCM,Technology,Radio And Television Broadcasting And Communications Equipment
+NUAN,Technology,Computer Software: Prepackaged Software
+NTNX,Technology,Computer Software: Prepackaged Software
+NVEC,Technology,Semiconductors
+NVDA,Technology,Semiconductors
+NXPI,Technology,Semiconductors
+OIIM,Technology,Semiconductors
+OCLR,Technology,Semiconductors
+OMCL,Technology,Computer Manufacturing
+OMC,Technology,Advertising
+ASGN,Technology,Professional Services
+ON,Technology,Semiconductors
+OTIV,Technology,Semiconductors
+OOMA,Technology,EDP Services
+OTEX,Technology,EDP Services
+ORCL,Technology,Computer Software: Prepackaged Software
+OSIS,Technology,Semiconductors
+PFIN,Technology,Industrial Machinery/Components
+PANW,Technology,Computer peripheral equipment
+TEUM,Technology,EDP Services
+PCYG,Technology,EDP Services
+PKE,Technology,Electrical Products
+PRKR,Technology,Radio And Television Broadcasting And Communications Equipment
+PAYC,Technology,Computer Software: Prepackaged Software
+PCTY,Technology,Computer Software: Prepackaged Software
+PCTI,Technology,Radio And Television Broadcasting And Communications Equipment
+PDFS,Technology,EDP Services
+PEGA,Technology,EDP Services
+PNR,Technology,Industrial Machinery/Components
+PRFT,Technology,EDP Services
+PERI,Technology,EDP Services
+PLAB,Technology,Semiconductors
+PXLW,Technology,Semiconductors
+PLXS,Technology,Electrical Products
+PNTR,Technology,Radio And Television Broadcasting And Communications Equipment
+COOL,Technology,Computer Software: Prepackaged Software
+POWI,Technology,Semiconductors
+PSDO,Technology,Retail: Computer Software & Peripheral Equipment
+IPDN,Technology,"Computer Software: Programming, Data Processing"
+PRGS,Technology,Computer Software: Prepackaged Software
+PFPT,Technology,EDP Services
+PRO,Technology,EDP Services
+PTC,Technology,Computer Software: Prepackaged Software
+PSTG,Technology,Electronic Components
+QTWO,Technology,Computer Software: Prepackaged Software
+QADA,Technology,Computer Software: Prepackaged Software
+QADB,Technology,Computer Software: Prepackaged Software
+QRVO,Technology,Semiconductors
+QCOM,Technology,Radio And Television Broadcasting And Communications Equipment
+QSII,Technology,EDP Services
+QBAK,Technology,Electronic Components
+QLYS,Technology,Computer Software: Prepackaged Software
+QTNA,Technology,Semiconductors
+QTM,Technology,Electronic Components
+QRHC,Technology,Diversified Commercial Services
+QUIK,Technology,Semiconductors
+QUMU,Technology,Computer Software: Prepackaged Software
+RDCM,Technology,Computer peripheral equipment
+RSYS,Technology,Computer peripheral equipment
+RMBS,Technology,Semiconductors
+RPD,Technology,Computer Software: Prepackaged Software
+RCMT,Technology,Professional Services
+RNWK,Technology,EDP Services
+RP,Technology,Computer Software: Prepackaged Software
+RHT,Technology,"Computer Software: Programming, Data Processing"
+RWC,Technology,Radio And Television Broadcasting And Communications Equipment
+SOL,Technology,Semiconductors
+RENN,Technology,EDP Services
+RCII,Technology,Diversified Commercial Services
+RESN,Technology,Semiconductors
+RXN,Technology,Industrial Machinery/Components
+RNG,Technology,EDP Services
+RHI,Technology,Professional Services
+FUEL,Technology,"Computer Software: Programming, Data Processing"
+RST,Technology,Computer Software: Prepackaged Software
+RBCN,Technology,Semiconductors
+SABR,Technology,"Computer Software: Programming, Data Processing"
+CRM,Technology,Computer Software: Prepackaged Software
+SANM,Technology,Electrical Products
+SAP,Technology,Computer Software: Prepackaged Software
+SPNS,Technology,Computer Software: Prepackaged Software
+SCSC,Technology,Retail: Computer Software & Peripheral Equipment
+SAIC,Technology,EDP Services
+SGMS,Technology,EDP Services
+SEAC,Technology,Radio And Television Broadcasting And Communications Equipment
+STX,Technology,Electronic Components
+SCWX,Technology,Computer Software: Prepackaged Software
+SMI,Technology,Semiconductors
+LEDS,Technology,Semiconductors
+SMTC,Technology,Semiconductors
+SQNS,Technology,Semiconductors
+NOW,Technology,Computer Software: Prepackaged Software
+SGOC,Technology,Radio And Television Broadcasting And Communications Equipment
+SHSP,Technology,Computer Software: Prepackaged Software
+SHOP,Technology,Computer Software: Prepackaged Software
+SSTK,Technology,EDP Services
+SWIR,Technology,Radio And Television Broadcasting And Communications Equipment
+SIFY,Technology,"Computer Software: Programming, Data Processing"
+SIGM,Technology,Semiconductors
+SGMA,Technology,Electrical Products
+SILC,Technology,Computer Communications Equipment
+SLAB,Technology,Semiconductors
+SIMO,Technology,Semiconductors
+SPIL,Technology,Semiconductors
+SSNI,Technology,Computer Communications Equipment
+SLP,Technology,EDP Services
+SINA,Technology,Computer Software: Prepackaged Software
+SWKS,Technology,Semiconductors
+SMSI,Technology,Computer Software: Prepackaged Software
+SMTX,Technology,Electrical Products
+SNAP,Technology,"Computer Software: Programming, Data Processing"
+SRAX,Technology,Advertising
+SCKT,Technology,Computer Manufacturing
+SOHU,Technology,EDP Services
+SEDG,Technology,Semiconductors
+SOFO,Technology,Radio And Television Broadcasting And Communications Equipment
+SONS,Technology,EDP Services
+SPA,Technology,Electrical Products
+ANY,Technology,EDP Services
+SPI,Technology,Semiconductors
+SPLK,Technology,Computer Software: Prepackaged Software
+SPSC,Technology,Computer Software: Prepackaged Software
+SPXC,Technology,Industrial Machinery/Components
+FLOW,Technology,Industrial Machinery/Components
+SQ,Technology,Computer Software: Prepackaged Software
+SSNC,Technology,Computer Software: Prepackaged Software
+STAF,Technology,Professional Services
+SXI,Technology,Industrial Machinery/Components
+SRT,Technology,Professional Services
+STM,Technology,Semiconductors
+SSYS,Technology,Computer peripheral equipment
+STRM,Technology,EDP Services
+SPWR,Technology,Semiconductors
+SMCI,Technology,Computer Manufacturing
+SPCB,Technology,Semiconductors
+SCON,Technology,Radio And Television Broadcasting And Communications Equipment
+SPRT,Technology,EDP Services
+SYKE,Technology,EDP Services
+SYMC,Technology,Computer Software: Prepackaged Software
+SYNC,Technology,"Computer Software: Programming, Data Processing"
+SYNA,Technology,EDP Services
+SNCR,Technology,EDP Services
+SNX,Technology,Retail: Computer Software & Peripheral Equipment
+SNPS,Technology,Computer Software: Prepackaged Software
+SYNT,Technology,EDP Services
+DATA,Technology,Computer Software: Prepackaged Software
+TSM,Technology,Semiconductors
+TTWO,Technology,Computer Software: Prepackaged Software
+TLND,Technology,Computer Software: Prepackaged Software
+TECD,Technology,Retail: Computer Software & Peripheral Equipment
+TCCO,Technology,Radio And Television Broadcasting And Communications Equipment
+TTEC,Technology,Professional Services
+TNC,Technology,Industrial Machinery/Components
+TDC,Technology,Computer Manufacturing
+TXN,Technology,Semiconductors
+TGH,Technology,Diversified Commercial Services
+DSGX,Technology,Computer Software: Prepackaged Software
+KEYW,Technology,EDP Services
+MIDD,Technology,Industrial Machinery/Components
+RUBI,Technology,"Computer Software: Programming, Data Processing"
+TTD,Technology,"Computer Software: Programming, Data Processing"
+ULTI,Technology,Computer Software: Prepackaged Software
+TISA,Technology,Computer peripheral equipment
+TSEM,Technology,Semiconductors
+TACT,Technology,Computer peripheral equipment
+TZOO,Technology,EDP Services
+TRMR,Technology,Advertising
+TRT,Technology,Industrial Machinery/Components
+TRIP,Technology,"Computer Software: Programming, Data Processing"
+TRTN,Technology,Diversified Commercial Services
+TBI,Technology,Professional Services
+TRUE,Technology,"Computer Software: Programming, Data Processing"
+TSRI,Technology,EDP Services
+TTMI,Technology,Electrical Products
+TCX,Technology,EDP Services
+TWLO,Technology,Computer Software: Prepackaged Software
+TWIN,Technology,Industrial Machinery/Components
+TWTR,Technology,"Computer Software: Programming, Data Processing"
+TYL,Technology,Computer Software: Prepackaged Software
+UBNT,Technology,Radio And Television Broadcasting And Communications Equipment
+UCTT,Technology,Semiconductors
+UTEK,Technology,Industrial Machinery/Components
+UIS,Technology,EDP Services
+UMC,Technology,Semiconductors
+URI,Technology,Diversified Commercial Services
+UPLD,Technology,Computer Software: Prepackaged Software
+VRNS,Technology,Computer Software: Prepackaged Software
+VDSI,Technology,EDP Services
+VECO,Technology,Industrial Machinery/Components
+VEEV,Technology,Computer Software: Prepackaged Software
+VRNT,Technology,EDP Services
+VRSN,Technology,EDP Services
+VRSK,Technology,EDP Services
+VSAT,Technology,Radio And Television Broadcasting And Communications Equipment
+VIAV,Technology,Semiconductors
+VRTU,Technology,EDP Services
+VISN,Technology,Advertising
+VMW,Technology,Computer Software: Prepackaged Software
+VISI,Technology,Professional Services
+VUZI,Technology,Radio And Television Broadcasting And Communications Equipment
+WSTG,Technology,Retail: Computer Software & Peripheral Equipment
+WEB,Technology,Computer Software: Prepackaged Software
+WB,Technology,"Computer Software: Programming, Data Processing"
+WBT,Technology,Industrial Machinery/Components
+WDC,Technology,Electronic Components
+WYY,Technology,EDP Services
+WIT,Technology,EDP Services
+WIX,Technology,"Computer Software: Programming, Data Processing"
+WDAY,Technology,EDP Services
+WK,Technology,Computer Software: Prepackaged Software
+WPPGY,Technology,Advertising
+WSCI,Technology,Industrial Machinery/Components
+XTLY,Technology,Computer Software: Prepackaged Software
+XLNX,Technology,Semiconductors
+XPER,Technology,Semiconductors
+XPLR,Technology,Computer Manufacturing
+XNET,Technology,Computer Software: Prepackaged Software
+YHOO,Technology,EDP Services
+YNDX,Technology,"Computer Software: Programming, Data Processing"
+YGE,Technology,Semiconductors
+YUME,Technology,Advertising
+YY,Technology,EDP Services
+ZBRA,Technology,Industrial Machinery/Components
+ZDGE,Technology,Computer Software: Prepackaged Software
+ZEN,Technology,EDP Services
+ZPIN,Technology,Professional Services
+ZIXI,Technology,EDP Services
+ZNGA,Technology,EDP Services
