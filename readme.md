@@ -11,12 +11,13 @@
 * scraping finanacial stats overview and report to doc;
 * scraping financial report (quarterly/annual EPS earning)
 * scraping insider buy and sell;
-* scraping competitors as network;
+* scraping peer competitors as network;
 * scraping investment relationship as network;
+* scraping suppliers/customers as network;
 
 **Analysis**
 
-* network analysis(peers, investors, suppliers, etc);
+* network analysis (peers, investors, suppliers, etc);
 * predicitve modeling;
 * text mining on business description kew words;
 * technical analysis like covariance matrix;
