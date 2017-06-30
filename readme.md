@@ -2,7 +2,7 @@
 
 *By Joyce Ye*
 
-## Functions
+## Modules
 
 **Scrapers**
 
@@ -16,11 +16,11 @@
 
 **Analysis**
 
-* network analysis;
+* network analysis(peers, investors, suppliers, etc);
 * predicitve modeling;
-* text mining on business kew words;
+* text mining on business description kew words;
 * technical analysis like covariance matrix;
-* ...
+* others
 
 
 
@@ -30,3 +30,4 @@
 
 ## APIs
 
+* 
