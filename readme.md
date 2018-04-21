@@ -4,31 +4,25 @@
 
 ## Modules
 
-**Scrapers**
+**Scraper**
 
-* scraping price and plot price (ewma<sup>*</sup>) and report to HTML;
-* scrping RSS and report to HTML;
-* scraping finanacial stats overview and report to doc;
-* scraping financial report (quarterly/annual EPS earning)
+* scraping price and volume;
+* scraping finanacial stats;
+* scraping blog;
+* scrping RSS;
+* scraping gurus transacation;
 * scraping insider buy and sell;
-* scraping peer competitors as network;
-* scraping investment relationship as network;
-* scraping suppliers/customers as network;
+* scraping peer competitors;
+* scraping investment relationship;
+* scraping suppliers/customers;
 
-**Analysis**
+**Plotter**
 
-* network analysis (peers, investors, suppliers, etc);
-* predicitve modeling;
-* text mining on business description kew words;
-* technical analysis like covariance matrix;
-* others
+* time series ewma plot
+* candle plot
 
+**Parser**
 
-
-
-[*] ewma: expotiential weighted moving average
+* parse financials
 
 
-## APIs
-
-* 
