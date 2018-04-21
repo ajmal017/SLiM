@@ -3,74 +3,32 @@ import matplotlib.pylab as plt
 import numpy as np
 import os
 from datetime import datetime
+from shutil import copyfile
 
-## sma plot
-def plot_sma_symbol(symbol, date, price_from = 'Close', short_sma = True, long_sma = False):
-	print "plot sma on {0}".format(symbol)
-	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
-	if not os.path.exists(fn):
-		print "price file not exists"
-		return
-	data = pd.read_csv(fn)
-	price = np.array(data[price_from])
-	ts = price[::-1]
-	# d = range(len(ts))
-	d = map(lambda x: datetime.strptime(x, "%d-%b-%y"), list(data.iloc[:,0])[::-1])
-
-	path_ = 'data/price/{0}'.format(date)
-	if not os.path.exists(path_):
-		os.mkdir(path_)
-	fn_short = "data/plot/{0}/{0}_short_sma_{1}_{2}.png".format(date, symbol, price_from)
-	fn_long = "data/plot/{0}/{0}_long_sma_{1}_{2}.png".format(date, symbol, price_from)
-	if short_sma and not os.path.exists(fn_short):
-		plt.clf()		
-		sma_10 = pd.rolling_mean(ts, window = 10)
-		sma_20 = pd.rolling_mean(ts, window = 20)
-		sma_50 = pd.rolling_mean(ts, window = 50)
-		l1, = plt.plot(d, ts, color = 'black', label = 'price')
-		l2, = plt.plot(d, sma_10, color = 'blue', label = 'sma 10')
-		l3, = plt.plot(d, sma_20, color = 'red', label = 'sma 20')
-		l4, = plt.plot(d, sma_50, color = 'green', label = 'sma 50')
-		x1,x2,y1,y2 = plt.axis()
-		plt.axis((x1, x2 + 15, y1, y2))
-		plt.legend([l1, l2, l3, l4], loc = 0)
-		plt.title("short sma(price: {2}) plot for {0} on {1}".format(symbol, date, price_from))
-		plt.savefig(fn_short)
-		# return
-	if long_sma and not os.path.exists(fn_long):
-		plt.clf()
-		sma_10 = pd.rolling_mean(ts, window = 50)
-		sma_20 = pd.rolling_mean(ts, window = 200)
-		
-		l1, = plt.plot(d, ts, color = 'black', label = 'price')
-		l2, = plt.plot(d, sma_10, color = 'blue', label = 'sma 50')
-		l3, = plt.plot(d, sma_20, color = 'red', label = 'sma 200')
-		x1,x2,y1,y2 = plt.axis()
-		plt.axis((x1, x2 + 15, y1, y2))
-		plt.legend(loc = 0)
-		plt.title("long sma(price: {2}) plot for {0} on {1}".format(symbol, date, price_from))
-		plt.savefig(fn_long)
-		# return
 
 ## ewma plot
-def plot_ewma_symbol(symbol, date, price_from, short_ewma = True, long_ewma = False, reverse = True, slot = None):
-	print "plot ewma on {0}".format(symbol)
+def plot_ewma_symbol(symbol, date, price_from, short_ewma = False, long_ewma = True, reverse = False, slot = None):
 	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
 	if not os.path.exists(fn):
-		print "price file not exists"
+		print("price file not exists")
 		return
 	data = pd.read_csv(fn)
 	price = np.array(data[price_from])
 	if reverse:
 		ts = price[::-1]
-		# d = range(len(ts))
-		d = map(lambda x: datetime.strptime(x, "%d-%b-%y"), list(data.iloc[:,0])[::-1])
+		d = range(len(ts))
+		x = list(data.iloc[:,0])[::-1]
+		# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0])[::-1])
 		fn_short = "data/plot/{0}/{0}_short_ewma_{1}_{2}.png".format(date, symbol, price_from)
 		fn_long = "data/plot/{0}/{0}_long_ewma_{1}_{2}.png".format(date, symbol, price_from)
 	else:
-		ts = price[slot[0]:slot[1]]
-		d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0][slot[0]:slot[1]]))
-		fn_short = "data/plot/{0}/{0}_short_ewma_{1}_{2}_{3}_{4}.png".format(date, symbol, price_from, slot[0], slot[1])
+		# ts = price[slot[0]:slot[1]]
+		ts = price
+		d = range(len(ts))
+		x = list(data.iloc[:,0])
+		# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0][slot[0]:slot[1]]))
+		# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0]))
+		fn_short = "data/plot/{0}/{0}_short_ewma_{1}_{2}.png".format(date, symbol, price_from)
 		fn_long = "data/plot/{0}/{0}_long_ewma_{1}_{2}.png".format(date, symbol, price_from)
 
 	path_ = 'data/plot/{0}'.format(date)
@@ -78,6 +36,8 @@ def plot_ewma_symbol(symbol, date, price_from, short_ewma = True, long_ewma = Fa
 		os.mkdir(path_)
 	
 	if short_ewma and not os.path.exists(fn_short):
+		print("plot short ewma on {0}".format(symbol))
+
 		plt.clf()
 		ewma_10 = pd.ewma(ts, span = 10, adjust = False)
 		ewma_20 = pd.ewma(ts, span = 20, adjust = False)
@@ -87,12 +47,15 @@ def plot_ewma_symbol(symbol, date, price_from, short_ewma = True, long_ewma = Fa
 		l3, = plt.plot(d, ewma_20, color = 'red', label = 'ewma 20')
 		l4, = plt.plot(d, ewma_50, color = 'green', label = 'ewma 50')
 		x1,x2,y1,y2 = plt.axis()
-		plt.axis((x1, x2 + 15, y1, y2))
+		plt.axis((x1, x2, y1, y2))
+		plt.xticks(d[::30], x[::30])
 		plt.legend(loc = 0)
 		plt.title("short ewma(price: {2}) plot for {0} on {1}".format(symbol, date, price_from))
 		plt.savefig(fn_short)
 		# return
 	if long_ewma and not os.path.exists(fn_long):
+		print("plot long ewma on {0}".format(symbol))
+
 		plt.clf()
 		ewma_50 = pd.ewma(ts, span = 50, adjust = False)
 		ewma_200 = pd.ewma(ts, span = 200, adjust = False)
@@ -102,9 +65,11 @@ def plot_ewma_symbol(symbol, date, price_from, short_ewma = True, long_ewma = Fa
 		l3, = plt.plot(d, ewma_200, color = 'red', label = 'ewma 200')
 		x1,x2,y1,y2 = plt.axis()
 		plt.axis((x1, x2 + 15, y1, y2))
+		plt.xticks(d[::30], x[::30])
 		plt.legend(loc = 0)
 		plt.title("long ewma(price: {2}) plot for {0} on {1}".format(symbol, date, price_from))
 		plt.savefig(fn_long)
+
 
 def plot_ma_symbol_list(symbol_source, date, price_from):
 	## symbol_source: tech, health
@@ -113,65 +78,137 @@ def plot_ma_symbol_list(symbol_source, date, price_from):
 		# plot_sma_symbol(symbol, date)
 		plot_ewma_symbol(symbol, date, price_from)
 
-def img2html_symbol_list(symbol_source, date, type_, price_from):
-	# type_: short_sma, short_ewma, long_sma, long_ewma
-	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
-	title = '{0}_{1}_{2}_{3}'.format(symbol_source, type_, price_from, date)
-	fn = 'report/{0}.html'.format(title)
 
-	with open(fn, 'w') as f:
-		f.write('<!DOCTYPE html>\n')
-		f.write('<html><head><title>{0}</title></head><body><center>\n'.format(title))
-		for symbol in symbol_list:
-			f.write('<h2>{0}</h2>\n'.format(symbol))
-			f.write('<img src="../data/plot/{0}/{0}_{1}_{2}_{3}.png">\n'.format(date, type_, symbol, price_from))
-
-		f.write('</center></body></html>')
-	print("report saving to {0}".format(fn))
-
-def plot_volume_symbol(symbol, date):
-	print "plot volume on {0}".format(symbol)
+def plot_price_volume_symbol(symbol, date, override):
+	if not date:
+		date = datetime.strftime(datetime.now(), '%m_%d')
+		
 	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
 	if not os.path.exists(fn):
-		print "price file not exists"
+		print("price file not exists")
 		return
-		
-	window = 90
-	data = pd.read_csv(fn)
-	vol = np.array(data['Volume'][:window])
-	ts = vol[::-1]
-	d = map(lambda x: datetime.strptime(x, "%d-%b-%y"), list(data.iloc[:window,0])[::-1])
+
+	print("plot ewma + volume on {0}".format(symbol))
 
 	path_ = 'data/plot/{0}'.format(date)
 	if not os.path.exists(path_):
 		os.mkdir(path_)
-	fn = "data/plot/{0}/{0}_{1}_volume.png".format(date, symbol)
+	fn_fig = "data/plot/{0}/{0}_ewma_volume_{1}.png".format(date, symbol)
 
+	if not override and os.path.exists(fn_fig):
+		print("file exists")
+		return
+	data = pd.read_csv(fn)
+	# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0]))
+	x = list(data.iloc[:,0])
+	d = np.arange(len(x))
+	xspace = int(len(x) / 10)
+	if xspace == 0:
+		print("data not enough")
+		return
+	price = np.array(data['Close'])
+	vol = np.array(data['Volume'])
+	
+	ewma_20 = pd.ewma(price, span = 20, adjust = False)
+	ewma_50 = pd.ewma(price, span = 50, adjust = False)
+	ewma_200 = pd.ewma(price, span = 200, adjust = False)
+	
+	plt.clf()
+	ax1 = plt.gca()
+	l1 = ax1.plot(d, price, color = 'black', label = 'price')
+	l2 = ax1.plot(d, ewma_20, color = 'blue', label = 'ewma 20')
+	l3 = ax1.plot(d, ewma_50, color = 'red', label = 'ewma 50')
+	l4 = ax1.plot(d, ewma_200, color = 'green', label = 'ewma 200')
+	
+	ax2 = ax1.twinx()
+	v1 = ax2.bar(d, vol, color = 'b', label = 'volume')
+	x1, x2, y3, y4 = ax2.axis()
+	ax2.axis((x1, x2, y3, 5*y4))
+	# fig.tight_layout()
+	plt.xticks(d[::xspace], x[::xspace], fontsize = 1)
+	plt.setp(ax1.xaxis.get_majorticklabels(), rotation=90)
+	lns = l1+l2+l3+l4
+	plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 10})
+	plt.title("price + ewma + volume plot for {0} on {1}".format(symbol, date))
+	plt.savefig(fn_fig, dpi = 500)
+	# plt.show()
+
+def plot_price_volume_crypto(symbol, date, override):
+	if not date:
+		date = datetime.strftime(datetime.now(), '%m_%d')
+		
+	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
 	if not os.path.exists(fn):
-		plt.clf()
-		plt.bar(d, ts, color = 'b', label = 'volume')
-		x1,x2,y1,y2 = plt.axis()
-		plt.axis((x1, x2 + 15, y1, y2))
-		plt.legend(loc = 0)
-		plt.title("Volume plot for {0} on {1} (Recent {2} days)".format(symbol, date, window))
-		plt.savefig(fn)
+		print("price file not exists")
+		return
+
+	print("plot ewma + volume on {0}".format(symbol))
+
+	path_ = 'data/plot/{0}'.format(date)
+	if not os.path.exists(path_):
+		os.mkdir(path_)
+	fn_fig = "data/plot/{0}/{0}_ewma_volume_{1}.png".format(date, symbol)
+
+	if not override and os.path.exists(fn_fig):
+		print("file exists")
+		return
+	data = pd.read_csv(fn)
+	# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0]))
+	x = list(data.iloc[:,0])
+	d = np.arange(len(x))
+	xspace = int(len(x) / 10)
+	if xspace == 0:
+		print("data not enough")
+		return
+	price = np.array(data['Close'])
+	vol = np.array(data['Volume'])
+	
+	ewma_5 = pd.ewma(price, span = 5, adjust = False)
+	ewma_10 = pd.ewma(price, span = 10, adjust = False)
+	ewma_20 = pd.ewma(price, span = 20, adjust = False)
+	ewma_50 = pd.ewma(price, span = 50, adjust = False)
+	ewma_200 = pd.ewma(price, span = 200, adjust = False)
+	
+	plt.clf()
+	ax1 = plt.gca()
+	l1 = ax1.plot(d, price, color = 'black', label = 'price')
+	l2_1 = ax1.plot(d, ewma_5, color = 'pink', label = 'ewma 5')
+	l2_2 = ax1.plot(d, ewma_10, color = 'purple', label = 'ewma 10')
+	l2 = ax1.plot(d, ewma_20, color = 'blue', label = 'ewma 20')
+	l3 = ax1.plot(d, ewma_50, color = 'red', label = 'ewma 50')
+	l4 = ax1.plot(d, ewma_200, color = 'green', label = 'ewma 200')
+	
+	ax2 = ax1.twinx()
+	v1 = ax2.bar(d, vol, color = 'b', label = 'volume')
+	x1, x2, y3, y4 = ax2.axis()
+	ax2.axis((x1, x2, y3, 5*y4))
+	# fig.tight_layout()
+	plt.xticks(d[::xspace], x[::xspace], fontsize = 1)
+	plt.setp(ax1.xaxis.get_majorticklabels(), rotation=90)
+	lns = l1+l2_1+l2_2+l2+l3+l4
+	plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 10})
+	plt.title("price + ewma + volume plot for {0} on {1}".format(symbol, date))
+	plt.savefig(fn_fig, dpi = 500)
+	# plt.show()
+
+
+def plot_price_volume_symbol_list(symbol_source, date, override = False):
+	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
+	for symbol in symbol_list:
+		plot_price_volume_symbol(symbol, date, override)
 
 
 if __name__ == '__main__':
-	symbol = 'GOOG'
+	
 	
 	# date = '05_18'
 	# date = datetime.now().strftime("%m_%d") # today
 
-	# plot_sma_symbol(symbol = symbol, date = date, short_sma = True, long_sma = True)
-	plot_ewma_symbol(symbol = symbol, date = 'history', price_from = 'Close', reverse = False, slot = [200,700])
+	# plot_ewma_symbol(symbol = symbol, date = 'history', price_from = 'Close', reverse = False, slot = [200,700])
 	
 	# plot_ma_symbol_list('watch', date)
-	# plot_ma_symbol_list('bull_0406', date)
 	# img2html_symbol_list('big_bull_0406', date, type_ = 'short_ewma')
 	# img2html_symbol_list('hold', date, type_ = 'short_ewma')
 
-	# plot_volume_symbol(symbol, date)
-
-
-	
+	# plot_price_volume_symbol("^IXIC", None, True)
+	plot_price_volume_crypto("BTC-USD", None, True)

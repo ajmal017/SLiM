@@ -19,7 +19,7 @@ def scrape_competitor_symbol(symbol):
 	soup = BeautifulSoup(requests.get(urlHead+'t='+symbol).content, 'lxml')
 	tables = soup.find_all('table')
 	trs = tables[1].find_all("tr")
-	fn = 'data/competitor/{0}_comp.csv'.format(symbol)
+	fn = 'data/network/competitor/{0}_competitors.csv'.format(symbol)
 	data = []
 	for tr in trs[1:]:
 		content = tr.find('a')
@@ -46,8 +46,20 @@ def scrape_competitor_symbol(symbol):
 	df = pd.DataFrame(data, columns = ['Symbol', 'Name', 'market cap', 'net income'])
 	df.to_csv(fn, index = None)
 
+def scrape_supplier_symbol(symbol):
+	url = "http://csimarket.com/stocks/competitionNO3.php?supply&code={0}".format(symbol)
+	soup = BeautifulSoup(requests.get(url).content, 'lxml')
+	fn = 'data/network/supplier/{}_suppliers.csv'.format(symbol)
+	table = soup.find_all('table')[7]
+	re = []
+	for tr in table.find_all('tr')[2:-1]:
+		sup = tr.find_all('td')[2].text
+		re.append(sup)
+	df = pd.DataFrame(re, columns = ['Symbol'])
+	df.to_csv(fn, index = None)
 
-
+#############################################
+#############################################
 # import networkx as nx
 # from networkx.algorithms import bipartite
 # https://networkx.github.io/documentation/networkx-1.10/reference/algorithms.bipartite.html
@@ -68,5 +80,7 @@ def scrape_competitor_symbol(symbol):
 
 
 if __name__ == '__main__':
-	symbol = 'AMBA'
+	symbol = 'LITE'
 	scrape_competitor_symbol(symbol)
+	# scrape_supplier_symbol(symbol)
+

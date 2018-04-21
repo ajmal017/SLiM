@@ -1,0 +1,12 @@
+https://xueqiu.com/stock/quote.json?code=SZ300212
+
+https://xueqiu.com/stock/forchartk/stocklist.json?symbol=sz300212&period=1day&type=normal&begin=1388583230445&end=1420119230445
+
+https://xueqiu.com/statuses/search.json?count=10&comment=0&symbol=SZ300212
+
+https://xueqiu.com/stock/f10/incstatement.json?symbol=SZ300212&page=0&size=10000
+sheet_type = ['incstatement', 'cfstatement', 'balsheet' ]
+
+https://xueqiu.com/stock/cata/stocklist.json?page=1&size=90&order=desc&orderby=pe_ttm&exchange=CN&plate=
+
+urllib.pathname2url("传媒")

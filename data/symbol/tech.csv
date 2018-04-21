@@ -358,7 +358,6 @@ MITK,Technology,Computer peripheral equipment
 MITL,Technology,Radio And Television Broadcasting And Communications Equipment
 MIXT,Technology,Computer Software: Prepackaged Software
 MOBL,Technology,Computer Software: Prepackaged Software
-MBLY,Technology,Computer Software: Prepackaged Software
 MODN,Technology,"Computer Software: Programming, Data Processing"
 MDSY,Technology,EDP Services
 MOMO,Technology,Computer Software: Prepackaged Software
@@ -616,3 +615,7 @@ ZEN,Technology,EDP Services
 ZPIN,Technology,Professional Services
 ZIXI,Technology,EDP Services
 ZNGA,Technology,EDP Services
+JD,,
+BABA,,
+AMZN,,
+

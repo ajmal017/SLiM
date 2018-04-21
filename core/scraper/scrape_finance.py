@@ -26,24 +26,30 @@ def scrape_report_weekly(p1, p2):
 	date = d1 + timedelta(days = 1)
 	while date < d2:
 		date_str = datetime.strftime(date, '%Y-%m-%d')
-		yahoo_url = 'https://finance.yahoo.com/calendar/earnings?from={0}&to={1}&day={2}'.format(p1,p2,date_str)
+		yahoo_url = 'https://finance.yahoo.com/calendar/earnings?from={0}&to={1}&day={2}&sf=epssurprisepct&st=desc'.format(p1,p2,date_str)
+		# yahoo_url = 'https://finance.yahoo.com/calendar/earnings?from={0}&to={1}&day={2}'.format(p1,p2,date_str)
 		soup = BeautifulSoup(requests.get(yahoo_url).content, 'lxml')
 		# print yahoo_url
 		tables = soup.find_all("table")
-		trs = tables[1].find_all("tr")
+		# print len(tables)
+		# return
+		trs = tables[0].find_all("tr")
 		df = []
 		for tr in trs[1:]:
 			try:
 				symbol = tr.find("a").text
 				if len(symbol.split('.')) > 1:
-					continue	
-				pubTime = tr.find_all('td')[2].text
-				df.append([symbol, pubTime])
+					continue
+				td = tr.find_all('td')
+				pubTime = td[2].text
+				est = td[3].text
+				act = td[4].text
+				df.append([symbol, pubTime, est, act])
 			except:
 				pass
 		if len(df) != 0:
-			data = pd.DataFrame(df, columns = ['Symbol','pubTime'])
-			data.to_csv('data/symbol/report_{0}.csv'.format(date_str), index = None)
+			data = pd.DataFrame(df, columns = ['Symbol', 'pubTime', 'estimate', 'actual'])
+			data.to_csv('data/eps/report_{0}.csv'.format(date_str), index = None)
 		date += timedelta(days = 1)
 
 
@@ -129,10 +135,9 @@ def scrape_finance_all_symbol(symbol, sector = None):
 
 
 if __name__=='__main__':
-	pass
 	
 	# scrape_finance_summary_symbol('AMD')
 	# scrape_finance_all_symbol('AMD')
 
 	# scrape_finanace_summary_list('tech')
-	# scrape_finance_all_list('tech')
+	scrape_finance_all_list('watch')

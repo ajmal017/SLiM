@@ -1,0 +1,7 @@
+numpy
+pandas
+requests
+urllib
+pandas_datareader
+bs4
+lxml
