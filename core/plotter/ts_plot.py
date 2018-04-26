@@ -191,12 +191,65 @@ def plot_price_volume_crypto(symbol, date, override):
 	plt.savefig(fn_fig, dpi = 500)
 	# plt.show()
 
+def plot_rsi_symbol(symbol, date, override):
+	if not date:
+		date = datetime.strftime(datetime.now(), '%m_%d')
+
+	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
+	if not os.path.exists(fn):
+		print("price file not exists")
+		return
+	print("plot rsi on {0}".format(symbol))
+
+	path_ = 'data/plot/{0}'.format(date)
+	if not os.path.exists(path_):
+		os.mkdir(path_)
+	
+	fn_fig = "data/plot/{0}/{0}_rsi_{1}.png".format(date, symbol)
+	if not override and os.path.exists(fn_fig):
+		print("file exists")
+		return
+
+	data = pd.read_csv(fn)
+	price = data['Close']
+	x = list(data.iloc[:,0])[1:]
+	d = np.arange(len(x))
+	xspace = int(len(x) / 10)
+	delta = np.array(price[:-1]) - np.array(price[1:]) ## prev - now
+	up = np.array([-x if x<0 else 0 for x in delta])
+	down = np.array([x if x>0 else 0 for x in delta])
+	
+	ewma_up_15 = pd.ewma(up, span = 15, adjust = False)
+	ewma_down_15 = pd.ewma(down, span = 15, adjust = False)
+	rs_15 = ewma_up_15/ewma_down_15
+	rsi_15 = 100 - 100 / (1 + rs_15)
+	
+	ewma_up_30 = pd.ewma(up, span = 30, adjust = False)
+	ewma_down_30 = pd.ewma(down, span = 30, adjust = False)
+	rs_30 = ewma_up_30/ewma_down_30
+	rsi_30 = 100 - 100 / (1 + rs_30)
+
+	plt.clf()
+	# plt.figure(figsize=(12,8))
+	plt.plot(d, rsi_15, label = '15 days')
+	plt.plot(d, rsi_30, label = '30 days')
+	plt.plot(d, np.ones(len(rsi_15))*70, color = 'green')
+	plt.plot(d, np.ones(len(rsi_15))*30, color = 'green')
+	plt.xticks(d[::xspace], x[::xspace], fontsize = 5)
+	plt.legend()
+	plt.title("15/30 Days RSI on {0} ".format(symbol))
+	plt.savefig(fn_fig, dpi = 500)
+
 
 def plot_price_volume_symbol_list(symbol_source, date, override = False):
 	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
 	for symbol in symbol_list:
 		plot_price_volume_symbol(symbol, date, override)
 
+def plot_rsi_symbol_list(symbol_source, date, override = False):
+	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
+	for symbol in symbol_list:
+		plot_rsi_symbol(symbol, date, override)
 
 if __name__ == '__main__':
 	
@@ -211,4 +264,7 @@ if __name__ == '__main__':
 	# img2html_symbol_list('hold', date, type_ = 'short_ewma')
 
 	# plot_price_volume_symbol("^IXIC", None, True)
-	plot_price_volume_crypto("BTC-USD", None, True)
+	# plot_price_volume_crypto("BTC-USD", None, True)
+	# plot_price_volume_crypto("ETH-USD", None, True)
+	# plot_rsi_symbol("ETH-USD", None, 15, True)
+	plot_rsi_symbol("BTC-USD", None, True)

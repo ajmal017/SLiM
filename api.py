@@ -38,15 +38,17 @@ def interface_price_and_plot(ph):
 		sp.scrape_price_symbol_list(ph['symbol_source'], ph['price_source'], ph['year'], ph['override_price'])
 	
 	tplt.plot_price_volume_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
+	tplt.plot_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
+	
 	# cplt.plot_candle_symbol_list(ph['symbol_source'], date = d)
 
-	plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['ewma_volume'])
+	plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['ewma_volume', 'rsi'])
 ################################################
 
 
 ############## interface monitor ######################
 ph = {
-	'symbol_source': 'watch',
+	'symbol_source': 'hold',
 	'date': None,
 	'price_source': 'yahoo',
 	'year': 3,

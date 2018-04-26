@@ -33,7 +33,8 @@ def scrape_price_symbol(symbol, source, year, override):
 		data = web.DataReader(symbol, source, start_date, end_date)
 		data.to_csv(fn)
 		print("successfully saved to " + fn)
-	except:
+	except Exception as err:
+		print(err)
 		print("error: download failed")
 
 
@@ -47,9 +48,9 @@ def scrape_price_and_search(symbol, source = 'yahoo'):
 		if rise > 0.1 and price > 10:
 			print(symbol, rise)
 			print(data)
-	except:
+	except Exception as err:
 		print("error: download failed")
-
+		print(err)
 
 def scrape_price_and_search_list(symbol_source):
 	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
@@ -104,6 +105,7 @@ if __name__ == '__main__':
 	date = '05_26'
 	# scrape_price_symbol('^IXIC', 'yahoo', 3, True)
 	scrape_price_symbol('BTC-USD','yahoo', 1, True)
+	scrape_price_symbol('ETH-USD','yahoo', 1, True)
 	# scrape_price_symbol_list('watch')
 	# scrape_price_symbol_list('hold')
 	# scrape_price_symbol_list('tech')
