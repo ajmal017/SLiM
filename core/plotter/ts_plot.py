@@ -4,7 +4,11 @@ import numpy as np
 import os
 from datetime import datetime
 from shutil import copyfile
+import sys
+import warnings
 
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
 
 ## ewma plot
 def plot_ewma_symbol(symbol, date, price_from, short_ewma = False, long_ewma = True, reverse = False, slot = None):
@@ -273,8 +277,8 @@ def plot_price_rsi_symbol(symbol, date, override):
 	up = np.array([-x if x<0 else 0 for x in delta])
 	down = np.array([x if x>0 else 0 for x in delta])
 	
-	ewma_up_15 = pd.ewma(up, span = 14, adjust = False)
-	ewma_down_15 = pd.ewma(down, span = 14, adjust = False)
+	ewma_up_15 = pd.ewma(up, span = 15, adjust = False)
+	ewma_down_15 = pd.ewma(down, span = 15, adjust = False)
 	rs_15 = ewma_up_15/ewma_down_15
 	rsi_15 = 100 - 100 / (1 + rs_15)
 
@@ -293,10 +297,10 @@ def plot_price_rsi_symbol(symbol, date, override):
 	ax2 = ax1.twinx()
 	p = ax2.plot(d, price[1:], color = 'black', label = 'price')
 	e_20 = ax2.plot(d, ewma_20[1:], color = 'blue', label = 'ewma 20')
-	# e_50 = ax2.plot(d, ewma_50[1:], color = 'red', label = 'ewma 50')
-	# e_200 = ax2.plot(d, ewma_200[1:], color = 'green', label = 'ewma 200')
+	e_50 = ax2.plot(d, ewma_50[1:], color = 'red', label = 'ewma 50')
+	e_200 = ax2.plot(d, ewma_200[1:], color = 'green', label = 'ewma 200')
 
-	ewma_20 = ax2.step(d, ewma_20[1:], color = 'blue', label = 'ewma 20')
+	# ewma_20 = ax2.step(d, ewma_20[1:], color = 'blue', label = 'ewma 20')
 	x1, x2, y3, y4 = ax2.axis()	
 	ax2.axis((x1, x2, y3, y4))
 	

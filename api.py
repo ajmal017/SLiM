@@ -37,12 +37,12 @@ def interface_price_and_plot(ph):
 	if not ph['date']:
 		sp.scrape_price_symbol_list(ph['symbol_source'], ph['price_source'], ph['year'], ph['override_price'])
 	
-	tplt.plot_price_volume_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
-	tplt.plot_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
-	
+	# tplt.plot_price_volume_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
+	# tplt.plot_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
+	# tplt.plot_price_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
 	# cplt.plot_candle_symbol_list(ph['symbol_source'], date = d)
 
-	plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['ewma_volume', 'rsi'])
+	# plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['ewma_volume', 'rsi'])
 ################################################
 
 
@@ -51,8 +51,8 @@ ph = {
 	'symbol_source': 'hold',
 	'date': None,
 	'price_source': 'yahoo',
-	'year': 3,
-	'override_price': True,
+	'year': 5,
+	'override_price': False,
 	'override_plot': True,
 	'price_type': 'Close'
 }

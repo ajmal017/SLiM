@@ -3,17 +3,23 @@ import matplotlib.pylab as plt
 import numpy as np
 import os
 from datetime import datetime
+import sys
+import warnings
 
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
 
-def data(symbol, date = None):
+def prep_data(symbol, date = None):
 	if not date:
 		date = datetime.strftime(datetime.now(), '%m_%d')
 		
 	fn = 'data/price/{0}/{1}.csv'.format(date, symbol)
 	if not os.path.exists(fn):
 		print("price file not exists")
-		return
+		return None
 	
+	out_fil = 'data/strat/{}_data.csv'.format(symbol)
+
 	data = pd.read_csv(fn)
 	# d = map(lambda x: datetime.strptime(x, "%Y-%m-%d"), list(data.iloc[:,0]))
 	x = list(data.iloc[:,0])
@@ -26,8 +32,8 @@ def data(symbol, date = None):
 	vol = np.array(data['Volume'])
 	
 	### calculate ewma
-	ewma_5 = pd.ewma(price, span = 5, adjust = False)
-	ewma_10 = pd.ewma(price, span = 10, adjust = False)
+	# ewma_5 = pd.ewma(price, span = 5, adjust = False)
+	# ewma_10 = pd.ewma(price, span = 10, adjust = False)
 	ewma_20 = pd.ewma(price, span = 20, adjust = False)
 	ewma_50 = pd.ewma(price, span = 50, adjust = False)
 	ewma_200 = pd.ewma(price, span = 200, adjust = False)
@@ -47,33 +53,53 @@ def data(symbol, date = None):
 	df = np.concatenate([date.reshape(-1,1),
 						price.reshape(-1,1),
 						vol.reshape(-1,1), 
-						ewma_5.reshape(-1,1), 
-						ewma_10.reshape(-1,1), 
+						# ewma_5.reshape(-1,1), 
+						# ewma_10.reshape(-1,1), 
 						ewma_20.reshape(-1,1), 
 						ewma_50.reshape(-1,1), 
 						ewma_200.reshape(-1,1)], axis = 1)[1:, :]
 
-	cols = ['date', 'price', 'volume', 'ewma_5', 'ewma_10', 'ewma_20', 'ewma_50', 'ewma_200', 'rsi']
+	cols = ['date', 'price', 'volume', 
+			# 'ewma_5', 'ewma_10', 
+			'ewma_20', 'ewma_50', 'ewma_200', 
+			'rsi']
+
 	# print(len(price), len(ewma_200), len(rsi_14))
 	output = pd.DataFrame(np.concatenate([df, df_rsi], axis = 1 ), columns = cols)
 	# print(output.head())
-	output.to_csv('{}_data.csv'.format(symbol), index = None)
-	# return output
 
-def strategy_1(symbol):
-	''' Strategy:
-		if enter rsi_over_buy: buy
-		if enter rsi_over_sell: sell
-		if leave rsi_over_buy: sell
-		if leave rsi_over_sell: buy
+	# output.to_csv(out_fil, index = None)
+	# print("data has been prepared")
+	return output
 
+def strategy(input_data, strat = 1):
 	'''
-	fn = 'data/strat/{0}_data.csv'.format(symbol)
-	if not os.path.exists(fn):
-		print("data file not exists")
-		return
+	Strategy-1:
+		if enter rsi_over_buy then buy
+		if enter rsi_over_sell then sell
+		if leave rsi_over_sell then buy
+		if leave rsi_over_buy then sell
+	Strategy-2:
+		if enter rsi_over_buy then buy
+		if enter rsi_over_sell then sell 
+	Strategy-3:
+		if leave rsi_over_sell then buy
+		if leave rsi_over_buy then sell
+	'''
+	if input_data is None:
+		return None
+
+	# fn = 'data/strat/{0}_data.csv'.format(symbol)
+	# if not os.path.exists(fn):
+	# 	print("data file not exists")
+	# 	return
 	
-	input_data = pd.read_csv(fn)
+	# out_fil = 'data/strat/{0}_signal_{1}.csv'.format(symbol, strat)
+	# if os.path.exists(out_fil):
+	# 	print("data already prepared")
+	# 	return
+
+	# input_data = pd.read_csv(fn)
 
 	date = input_data['date']
 	rsi = input_data['rsi']
@@ -88,41 +114,67 @@ def strategy_1(symbol):
 	
 	signal = ['' for l in range(len(date))]
 	
-	for t in range(1, len(date)):
-		## enter over sell
-		if not rsi_over_sell[t-1] and rsi_over_sell[t]:
-			signal[t] = 'sell'
-		## enter over buy
-		if not rsi_over_buy[t-1] and rsi_over_buy[t]:
-			signal[t] = 'buy'
-		
-		## leave over buy
-		if rsi_over_buy[t-1] and not rsi_over_buy[t]:
-			signal[t] = 'sell'
-		## leave over sell
-		if rsi_over_sell[t-1] and not rsi_over_sell[t]:
-			signal[t] = 'buy'
+	if strat == 1:
+		for t in range(1, len(date)):
+			## enter over sell
+			if not rsi_over_sell[t-1] and rsi_over_sell[t]:
+				signal[t] = 'sell'
+			## enter over buy
+			if not rsi_over_buy[t-1] and rsi_over_buy[t]:
+				signal[t] = 'buy'
+			# leave over buy
+			if rsi_over_buy[t-1] and not rsi_over_buy[t]:
+				signal[t] = 'sell'
+			# leave over sell
+			if rsi_over_sell[t-1] and not rsi_over_sell[t]:
+				signal[t] = 'buy'
 
+	if strat == 2:
+		for t in range(1, len(date)):
+			## enter over sell
+			if not rsi_over_sell[t-1] and rsi_over_sell[t]:
+				signal[t] = 'sell'
+			## enter over buy
+			if not rsi_over_buy[t-1] and rsi_over_buy[t]:
+				signal[t] = 'buy'
 
-	df = pd.DataFrame({ 'date': date, 'price': price, 'signal': signal }).iloc[15:, :]
-	df.to_csv('data/strat/{}_signal_1.csv'.format(symbol), index = None)
+	if strat == 3:
+		for t in range(1, len(date)):
+			# leave over buy
+			if rsi_over_buy[t-1] and not rsi_over_buy[t]:
+				signal[t] = 'sell'
+			# leave over sell
+			if rsi_over_sell[t-1] and not rsi_over_sell[t]:
+				signal[t] = 'buy'
+
+	signal_data = pd.DataFrame({ 'date': date, 'price': price, 'signal': signal }).iloc[15:, :]
+	# signal_data.to_csv(out_fil, index = None)
 	
 	# price_over_ewma20 = [ price[ind] > ewma_20[ind] for ind in range(len(date)) ]
 
 	### return date, price, signal
+	return signal_data
 
-def transaction(symbol, strat = 1):
-	''' Goal: 
+def transaction(signal_data, symbol, strat):
+	''' Goals: 
 			to reduce transaction times
 			to increase gain
-			to reduce loss 
+			to reduce loss
+		Actions:
+			buy
+			sell (sold out)
+			add
+			reduce
 	'''
-	fn = 'data/strat/{0}_signal_{1}.csv'.format(symbol, strat)
-	if not os.path.exists(fn):
-		print("signal file not exists")
+	if signal_data is None:
 		return
+
+	# fn = 'data/strat/{0}_signal_{1}.csv'.format(symbol, strat)
+	# if not os.path.exists(fn):
+	# 	print("signal file not exists")
+	# 	return
 	
-	signal_data = pd.read_csv(fn)
+	# signal_data = pd.read_csv(fn)
 
 	status = { "hold" : False, "price": 0 }
 	earning = { "gain": 0, "loss": 0 }
@@ -143,19 +195,49 @@ def transaction(symbol, strat = 1):
 					earning["gain"] += (diff / status["price"])
 					history.append([row['date'], 'sell', row['price'], 'gain'])
 				else:
-					earning["loss"] += (-diff / status["price"], 'loss')
-				
+					earning["loss"] += (-diff / status["price"])
+					history.append([row['date'], 'sell', row['price'], 'loss'])
 
-	df = pd.DataFrame(history, columns = ['date', 'act', 'price'])
+	df = pd.DataFrame(history, columns = ['date', 'act', 'price', 'g/l'])
 	df.to_csv("data/strat/{}_history_{}.csv".format(symbol, strat), index = None)
 	
+	earning['loss'] = round(earning['loss']*100, 2)
+	earning['gain'] = round(earning['gain']*100, 2)
 	print(earning)
 	print("transaction times: ", len(history)/2)
 
 
+def run_strat_symbol(symbol, strat):
+	print("stock: {}".format(symbol))
+	print("strategy: {}".format(strat))
+
+
+	data = prep_data(symbol)
+
+	rate = no_strategy(data)
+	print("no str return: {}".format(rate))
+
+	signal = strategy(data, strat)
+	transaction(signal, symbol, strat)
+	print("")
+
+
+def run_strat_symbol_list(symbol_source, strat):
+	symbol_list = pd.read_csv('data/symbol/{0}.csv'.format(symbol_source))['Symbol']
+	for symbol in symbol_list:
+		run_strat_symbol(symbol, strat)
+
+def no_strategy(input_data):
+	if input_data is None:
+		return None
+	price = list(input_data['price'])
+	return round((float(price[-1]) - float(price[0])) / float(price[0]) * 100, 2)
+
 if __name__ == '__main__':
 	# d = data('ETH-USD')
-	symbol = 'AVGO'
-	data(symbol)
-	sig = strategy(symbol)
-	transaction(symbol)
+	# symbol = 'AVGO'
+	# strat = 3
+	# run_strat_symbol(symbol, strat)
+
+	run_strat_symbol_list("hold", 3)
+	
