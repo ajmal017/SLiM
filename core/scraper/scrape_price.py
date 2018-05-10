@@ -11,11 +11,16 @@ from datetime import datetime, timedelta
 import pandas_datareader.data as web
 
 
-def scrape_price_symbol(symbol, source, year, override):
+def scrape_price_symbol(symbol, source, year, override = False, end_date = None):
 
 	print("---------- scraping price " + symbol)
 
-	end_date = datetime.today()
+	if not end_date:
+		end_date = datetime.today()
+	else:
+		end_date = "2018_" + end_date
+		end_date = datetime.strptime(end_date, "%Y_%m_%d")
+
 	start_date = end_date - timedelta(365 * year)
 
 	path_ = 'data/price/{0}'.format(end_date.strftime("%m_%d"))
@@ -30,6 +35,7 @@ def scrape_price_symbol(symbol, source, year, override):
 	# data = web.DataReader(symbol, 'google', start_date, end_date)
 	# data.to_csv(fn, index = None)
 	try:
+		# print(start_date, end_date)
 		data = web.DataReader(symbol, source, start_date, end_date)
 		data.to_csv(fn)
 		print("successfully saved to " + fn)
@@ -103,9 +109,9 @@ def scrape_price_symbol_list(symbol_source, price_source = 'yahoo', year = 5, ov
 if __name__ == '__main__':
 
 	date = '05_26'
-	# scrape_price_symbol('^IXIC', 'yahoo', 3, True)
-	scrape_price_symbol('BTC-USD','yahoo', 1, True)
-	scrape_price_symbol('ETH-USD','yahoo', 1, True)
+	scrape_price_symbol('^IXIC', 'yahoo', 5, True, '05_08')
+	# scrape_price_symbol('BTC-USD','yahoo', 1, True)
+	# scrape_price_symbol('ETH-USD','yahoo', 1, True)
 	# scrape_price_symbol_list('watch')
 	# scrape_price_symbol_list('hold')
 	# scrape_price_symbol_list('tech')
