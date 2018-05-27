@@ -4,11 +4,7 @@ import numpy as np
 import os
 from datetime import datetime
 from shutil import copyfile
-import sys
-import warnings
 
-if not sys.warnoptions:
-    warnings.simplefilter("ignore")
 
 ## ewma plot
 def plot_ewma_symbol(symbol, date, price_from, short_ewma = False, long_ewma = True, reverse = False, slot = None):
@@ -129,8 +125,8 @@ def plot_price_volume_symbol(symbol, date, override):
 	x1, x2, y3, y4 = ax2.axis()
 	ax2.axis((x1, x2, y3, 5*y4))
 	# fig.tight_layout()
-	plt.xticks(d[::xspace], x[::xspace], fontsize = 1)
-	plt.setp(ax1.xaxis.get_majorticklabels(), rotation=90)
+	plt.xticks(d[::xspace], x[::xspace])
+	plt.setp(ax1.xaxis.get_majorticklabels(), fontsize = 6, rotation=90)
 	lns = l1+l2+l3+l4
 	plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 10})
 	plt.title("price + ewma + volume plot for {0} on {1}".format(symbol, date))
@@ -187,8 +183,8 @@ def plot_price_volume_crypto(symbol, date, override):
 	x1, x2, y3, y4 = ax2.axis()
 	ax2.axis((x1, x2, y3, 5*y4))
 	# fig.tight_layout()
-	plt.xticks(d[::xspace], x[::xspace], fontsize = 1)
-	plt.setp(ax1.xaxis.get_majorticklabels(), rotation=90)
+	plt.xticks(d[::xspace], x[::xspace])
+	plt.setp(ax1.xaxis.get_majorticklabels(), fontsize = 6, rotation=90)
 	lns = l1+l2_1+l2_2+l2+l3+l4
 	plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 10})
 	plt.title("price + ewma + volume plot for {0} on {1}".format(symbol, date))
@@ -220,8 +216,8 @@ def plot_rsi_symbol(symbol, date, override):
 	d = np.arange(len(x))
 	xspace = int(len(x) / 10)
 	delta = np.array(price[:-1]) - np.array(price[1:]) ## prev - now
-	up = np.array([-x if x<0 else 0 for x in delta])
-	down = np.array([x if x>0 else 0 for x in delta])
+	up = np.array([-i if i<0 else 0 for i in delta])
+	down = np.array([i if i>0 else 0 for i in delta])
 	
 	ewma_up_15 = pd.ewma(up, span = 15, adjust = False)
 	ewma_down_15 = pd.ewma(down, span = 15, adjust = False)
@@ -239,7 +235,8 @@ def plot_rsi_symbol(symbol, date, override):
 	plt.plot(d, rsi_30, label = '30 days')
 	plt.plot(d, np.ones(len(rsi_15))*70, color = 'green')
 	plt.plot(d, np.ones(len(rsi_15))*30, color = 'green')
-	plt.xticks(d[::xspace], x[::xspace], fontsize = 5)
+	plt.xticks(d[::xspace], x[::xspace])
+	plt.setp(ax1.xaxis.get_majorticklabels(), fontsize = 6, rotation=90)
 	plt.legend()
 	plt.title("15/30 Days RSI on {0} ".format(symbol))
 	plt.savefig(fn_fig, dpi = 500)
@@ -274,11 +271,11 @@ def plot_price_rsi_symbol(symbol, date, override):
 	ewma_200 = pd.ewma(price, span = 200, adjust = False)
 
 	delta = np.array(price[:-1]) - np.array(price[1:]) ## prev - now
-	up = np.array([-x if x<0 else 0 for x in delta])
-	down = np.array([x if x>0 else 0 for x in delta])
+	up = np.array([-i if i<0 else 0 for i in delta])
+	down = np.array([i if i>0 else 0 for i in delta])
 	
-	ewma_up_15 = pd.ewma(up, span = 15, adjust = False)
-	ewma_down_15 = pd.ewma(down, span = 15, adjust = False)
+	ewma_up_15 = pd.ewma(up, span = 14, adjust = False)
+	ewma_down_15 = pd.ewma(down, span = 14, adjust = False)
 	rs_15 = ewma_up_15/ewma_down_15
 	rsi_15 = 100 - 100 / (1 + rs_15)
 
@@ -303,12 +300,11 @@ def plot_price_rsi_symbol(symbol, date, override):
 	# ewma_20 = ax2.step(d, ewma_20[1:], color = 'blue', label = 'ewma 20')
 	x1, x2, y3, y4 = ax2.axis()	
 	ax2.axis((x1, x2, y3, y4))
+	plt.xticks(d[::xspace], x[::xspace])
+	plt.setp(ax1.xaxis.get_majorticklabels(), fontsize = 6, rotation=90)
 	
-	plt.xticks(d[::xspace], x[::xspace], fontsize = 1)
-	plt.setp(ax1.xaxis.get_majorticklabels(), rotation=90)
-	
-	# lns = p + e_20 + e_50 + e_200 + r
-	# plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 5})
+	lns = p + e_20 + e_50 + e_200 + r
+	plt.legend(lns, [l.get_label() for l in lns], loc = 2, prop={'size': 5})
 	
 	plt.title("price + rsi plot for {0} on {1}".format(symbol, date))
 	plt.savefig(fn_fig, dpi = 1000)
@@ -346,6 +342,6 @@ if __name__ == '__main__':
 	# plot_price_volume_crypto("ETH-USD", None, True)
 	# plot_rsi_symbol("ETH-USD", None, True)
 	# plot_rsi_symbol("BTC-USD", None, True)
-
+	# plot_price_rsi_symbol("^IXIC", None, True)
 	plot_price_rsi_symbol("ETH-USD", None, True)
 	plot_price_rsi_symbol("BTC-USD", None, True)

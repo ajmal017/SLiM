@@ -7,6 +7,16 @@ import core.plotter.candle_plot as cplt
 import core.parser.parse_json as pj
 from datetime import datetime
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--source",  type = str, help="to specify source of symbols")
+parser.add_argument("--year", type = int, default = 2, help = "to specify year(s) of history price, default is 2 years")
+parser.add_argument("--date", type = str, help = "to specify last date of history price, default is today")
+parser.add_argument("--override_plot", action = "store_true", default = False, help = "to specify whether override plot, default is False")
+parser.add_argument("--override_price", action = "store_true", default = False, help = "to specify whether override price, default is False")
+parser.add_argument("--report", action = "store_true", default = False, help = "to specify whether report, default is False")
+
+args = parser.parse_args()
 ################################################
 ############## scrape report list ###########
 # sf.scrape_report_weekly(p1 = '2017-10-15', p2 = '2017-10-21')
@@ -39,21 +49,21 @@ def interface_price_and_plot(ph):
 	
 	# tplt.plot_price_volume_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
 	# tplt.plot_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
-	# tplt.plot_price_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
+	tplt.plot_price_rsi_symbol_list(ph['symbol_source'], date = d, override = ph['override_plot'])
 	# cplt.plot_candle_symbol_list(ph['symbol_source'], date = d)
-
-	# plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['ewma_volume', 'rsi'])
+	if args.report:
+		plrd.img2html_symbol_list(ph['symbol_source'], date = d, types_ = ['price_rsi'])
 ################################################
 
 
 ############## interface monitor ######################
 ph = {
-	'symbol_source': 'hold',
-	'date': None,
+	'symbol_source': args.source,
+	'date': args.date,
 	'price_source': 'yahoo',
-	'year': 5,
-	'override_price': False,
-	'override_plot': True,
+	'year': args.year,
+	'override_price': args.override_price,
+	'override_plot': args.override_plot,
 	'price_type': 'Close'
 }
 
